@@ -22,22 +22,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{#each trips}}
                     <tr>
-                        <td>B0101</td>
-                        <td>Cancun</td>
-                        <td>4 nights / 5 days</td>
-                        <td>Feb 14, 2021</td>
-                        <td>Emerald Bay, 3-stars</td>
-                        <td>$799.00</td>
+                        <td>{{code}}</td>
+                        <td>{{name}}</td>
+                        <td>{{length}}</td>
+                        <td>{{start}}</td>
+                        <td>{{resort}}</td>
+                        <td>${{perPerson}}</td>
                     </tr>
                     <tr>
-                        <td>B0103</td>
-                        <td>Barbados</td>
-                        <td>5 nights / 6 days</td>
-                        <td>Feb 28, 2021</td>
-                        <td>Castaway Cove, 4-stars</td>
-                        <td>$1299.00</td>
+                        <td colspan="6">{{description}}</td>
                     </tr>
+                    {{/each}}
                 </tbody>
             </table>
         </div>
