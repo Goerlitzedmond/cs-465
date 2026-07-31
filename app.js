@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
-require('./app_server/models/db');
+require('./app_api/models/db');
 
 const app = express();
 
@@ -15,7 +15,11 @@ hbs.registerPartials(path.join(__dirname, 'app_server', 'views', 'partials'));
 // Serve static files from public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Wire up the routes
+// Wire up the API routes
+const apiRouter = require('./app_api/routes/index');
+app.use('/api', apiRouter);
+
+// Wire up the app server routes
 const router = require('./app_server/routes/index');
 app.use('/', router);
 
