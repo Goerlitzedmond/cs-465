@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3>Edit Trip</h3>
+      <hr>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="code">Trip Code</label>
+          <input type="text" class="form-control" id="code" [(ngModel)]="trip.code" name="code" required>
+        </div>
+        <div class="form-group mt-2">
+          <label for="name">Trip Name</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="trip.name" name="name" required>
+        </div>
+        <div class="form-group mt-2">
+          <label for="length">Length</label>
+          <input type="text" class="form-control" id="length" [(ngModel)]="trip.length" name="length" required>
+        </div>
+        <div class="form-group mt-2">
+          <label for="start">Start Date</label>
+          <input type="text" class="form-control" id="start" [(ngModel)]="trip.start" name="start" required>
+        </div>
+        <div class="form-group mt-2">
+          <label for="resort">Resort</label>
+          <input type="text" class="form-control" id="resort" [(ngModel)]="trip.resort" name="resort" required>
+        </div>
+        <div class="form-group mt-2">
+          <label for="perPerson">Per Person</label>
+          <input type="text" class="form-control" id="perPerson" [(ngModel)]="trip.perPerson" name="perPerson" required>
+        </div>
+        <div class="form-group mt-2">
+          <label for="image">Image</label>
+          <input type="text" class="form-control" id="image" [(ngModel)]="trip.image" name="image" required>
+        </div>
+        <div class="form-group mt-2">
+          <label for="description">Description</label>
+          <textarea class="form-control" id="description" [(ngModel)]="trip.description" name="description" rows="4" required></textarea>
+        </div>
+        <div class="mt-3">
+          <button type="submit" class="btn btn-primary">Update Trip</button>
+          <a routerLink="/" class="btn btn-secondary ms-2">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
