@@ -1,7 +1,11 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">{{ title }}</a>
-    <button class="btn btn-primary" routerLink="/add-trip">Add Trip</button>
+    <div>
+      <button *ngIf="authService.isLoggedIn()" class="btn btn-primary me-2" routerLink="/add-trip">Add Trip</button>
+      <button *ngIf="!authService.isLoggedIn()" class="btn btn-outline-primary me-2" routerLink="/login">Login</button>
+      <button *ngIf="authService.isLoggedIn()" class="btn btn-outline-secondary" (click)="logout()">Logout</button>
+    </div>
   </div>
 </nav>
 <div class="container">

@@ -2,7 +2,11 @@ const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
 const cors = require('cors');
+const passport = require('passport');
 require('./app_api/models/db');
+require('./app_api/models/user');
+require('./app_api/config/passport');
+require('./app_api/config/jwt');
 
 const app = express();
 
@@ -21,6 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Parse JSON request bodies
 app.use(express.json());
+
+// Initialize Passport
+app.use(passport.initialize());
 
 // Wire up the API routes
 const apiRouter = require('./app_api/routes/index');
